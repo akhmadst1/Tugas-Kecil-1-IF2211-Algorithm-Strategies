@@ -150,7 +150,7 @@ int main(){
     }
 
     exec = (float)(clock() - start)/CLOCKS_PER_SEC; // akhir waktu eksekusi
-    cout << endl << "Execution time is " << exec << endl;
+    cout << endl << "Execution time is " << exec << " s" << endl;
     
     // save to file
     loop = true;
@@ -168,6 +168,7 @@ int main(){
             saveToFile(filename);
             loop = false;
         } else if (saveOrNo == "2" || saveOrNo == "no" || saveOrNo == "No" || saveOrNo == "NO" || saveOrNo == "n" || saveOrNo == "N"){
+            cout << "Okay then, see you later!" << endl;
             loop = false;
         } else{
             cout << "Invalid input! Please enter again" << endl;
@@ -197,7 +198,7 @@ void randomInput(){
     f = cardSign[idx2];
     g = cardSign[idx3];
     h = cardSign[idx4];
-    cout << "Your random cards: " << e << f << g << h << endl;
+    cout << "Your random cards: " << e << " " << f << " " << g << " " << h << endl;
 }
 
 bool checkInput(string input){
@@ -485,7 +486,7 @@ void printResult(float a, float b, float c, float d, int i, int j, int k){
 }
 
 void saveToFile(string filename){
-    ofstream output("../test/" + filename);
+    ofstream output("test/" + filename);
     
     if (output.is_open()){
         output << count << " solution(s) found" << "\n";
@@ -495,5 +496,5 @@ void saveToFile(string filename){
         output << "Execution time is " << exec;
     }
     output.close();
-    cout << "File berhasil disimpan" << endl;
+    cout << "File berhasil disimpan di folder test" << endl;
 }
